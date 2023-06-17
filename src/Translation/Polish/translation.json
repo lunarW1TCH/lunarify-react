@@ -1,0 +1,31 @@
+{
+  "navigation": {
+    "home": "Strona Główna",
+    "stats": "Statystyki",
+    "settings": "Ustawienia"
+  },
+  "home": {
+    "welcome": "Witaj! Udaj się na stronę 'Statystyki', by zobaczyć dane swojego profilu lub na 'Ustawienia', aby zmienić motyw."
+  },
+  "stats": {
+    "last4Weeks": "Ostatnie 4 Tygodnie",
+    "last6Months": "Ostatnie 6 Miesięcy",
+    "allTime": "Cała Historia",
+    "popularity": "Popularność",
+    "artists": "Artyści",
+    "songs": "Utwory"
+  },
+  "themes": {
+    "chooseTheme": "Wybierz Motyw",
+    "Dark Lavender": "Ciemny Lawendowy",
+    "Dark Blue": "Ciemny Błękitny",
+    "Dark Pink": "Ciemny Różowy",
+    "Dark Yellow": "Ciemny Żółty",
+    "Dark Mint": "Ciemny Miętowy",
+    "Light Lavender": "Jasny Lawendowy",
+    "Light Blue": "Jasny Błękitny",
+    "Light Pink": "Jasny Różowy",
+    "Light Yellow": "Jasny Żółty",
+    "Light Mint": "Jasny Miętowy"
+  }
+}

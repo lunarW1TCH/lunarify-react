@@ -5,11 +5,14 @@
 /.pnp
 .pnp.js
 
+
 # testing
 /coverage
 
 # production
 /build
+dist/
+lib/
 
 # misc
 .DS_Store
@@ -17,6 +20,14 @@
 .env.development.local
 .env.test.local
 .env.production.local
+package-lock.json
+.vscode/
+.cache/
+.DS_Store
+.prettierrc
+todo.txt
+.eslintrc.json
+
 
 npm-debug.log*
 yarn-debug.log*

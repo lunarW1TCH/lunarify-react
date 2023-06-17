@@ -1,0 +1,31 @@
+{
+  "navigation": {
+    "home": "Home",
+    "stats": "Stats",
+    "settings": "Settings"
+  },
+  "home": {
+    "welcome": "Hello! Go to 'Stats' to see your profile's statistics or to 'Settings' to change your current theme."
+  },
+  "stats": {
+    "last4Weeks": "Last 4 Weeks",
+    "last6Months": "Last 6 Months",
+    "allTime": "All Time",
+    "popularity": "Popularity",
+    "artists": "Artists",
+    "songs": "Songs"
+  },
+  "themes": {
+    "chooseTheme": "Choose Theme",
+    "Dark Lavender": "Dark Lavender",
+    "Dark Blue": "Dark Blue",
+    "Dark Pink": "Dark Pink",
+    "Dark Yellow": "Dark Yellow",
+    "Dark Mint": "Dark Mint",
+    "Light Lavender": "Light Lavender",
+    "Light Blue": "Light Blue",
+    "Light Pink": "Light Pink",
+    "Light Yellow": "Light Yellow",
+    "Light Mint": "Light Mint"
+  }
+}
