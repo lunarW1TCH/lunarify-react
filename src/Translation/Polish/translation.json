@@ -13,7 +13,9 @@
     "allTime": "Cała Historia",
     "popularity": "Popularność",
     "artists": "Artyści",
-    "songs": "Utwory"
+    "songs": "Utwory",
+    "show": "pokaż",
+    "hide": "ukryj"
   },
   "themes": {
     "chooseTheme": "Wybierz Motyw",

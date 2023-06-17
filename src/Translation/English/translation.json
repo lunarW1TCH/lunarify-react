@@ -13,7 +13,9 @@
     "allTime": "All Time",
     "popularity": "Popularity",
     "artists": "Artists",
-    "songs": "Songs"
+    "songs": "Songs",
+    "show": "show",
+    "hide": "hide"
   },
   "themes": {
     "chooseTheme": "Choose Theme",

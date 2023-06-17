@@ -10,10 +10,9 @@ import { StoreInterface } from '../../store/store';
 
 import StatsTimeRange from '../../components/stats/StatsTimeRange';
 import StyleSheet from '../../interfaces/StyleSheet';
-import ShowIcon from '../../icons/show.png';
-import HideIcon from '../../icons/hide.png';
 
 const TopSongs = () => {
+  const theme = useSelector((state: StoreInterface) => state.ui.theme);
   const screenSize = useWindowDimensions();
   const [hidden, setHidden] = useState(false);
   const { t } = useTranslation();
@@ -75,11 +74,14 @@ const TopSongs = () => {
       alignItems: 'center',
     },
     showHideIcon: {
-      width: 24,
-      height: 24,
       cursor: 'pointer',
       marginLeft: 16,
-      marginTop: 8,
+      marginTop: 16,
+      borderRadius: 4,
+      backgroundColor: theme.mainTextColor,
+      fontSize: 14,
+      color: theme.backgroundColor,
+      padding: 4,
     },
   };
 
@@ -93,11 +95,7 @@ const TopSongs = () => {
           role="button"
           tabIndex={0}
         >
-          <img
-            style={styles.showHideIcon}
-            src={hidden ? ShowIcon : HideIcon}
-            alt={hidden ? 'show' : 'hide'}
-          />
+          <i style={styles.showHideIcon}>{hidden ? 'show' : 'hide'}</i>
         </span>
       </div>
       <StatsTimeRange range={range} setRange={setRange} />

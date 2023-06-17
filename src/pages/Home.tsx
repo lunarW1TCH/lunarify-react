@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { setCookie } from '../helpers/helpers';
 import StyleSheet from '../interfaces/StyleSheet';
 
 const HomePage = () => {
@@ -12,6 +13,9 @@ const HomePage = () => {
       alignItems: 'center',
     },
   };
+
+  // setCookie('refreshToken', '', 0.01);
+  // setCookie('authToken', '', 0.01);
 
   return (
     <div style={styles.containerHome}>

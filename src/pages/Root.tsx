@@ -12,6 +12,8 @@ import { getRefreshToken } from '../helpers/auth';
 
 const RootLayout = () => {
   const dispatch = useDispatch();
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
 
   useEffect(() => {
     const cookieTheme = getCookie('theme');
@@ -23,24 +25,27 @@ const RootLayout = () => {
   const token = getCookie('authToken');
   const refreshToken = getCookie('refreshToken');
 
-  useEffect(() => {
-    const getToken = async () => {
-      if (!token) {
-        if (!refreshToken) {
-          return <NoAuthFallbackPage />;
-        } else {
-          const newTokens = await getRefreshToken(refreshToken);
+  const getToken = async () => {
+    if (!token) {
+      if (refreshToken && !code) {
+        const newTokens = await getRefreshToken(refreshToken);
 
+        if (newTokens.access_token) {
           setCookie('authToken', newTokens.access_token, 0.04);
-          if (newTokens.refresh_token) {
-            setCookie('refreshToken', newTokens.refresh_token, 100);
-          }
+        }
+        if (newTokens.refresh_token) {
+          setCookie('refreshToken', newTokens.refresh_token, 100);
+          window.location.reload();
         }
       }
-    };
+    }
+  };
 
-    getToken();
-  }, [token]);
+  getToken();
+
+  if (!token) {
+    return <NoAuthFallbackPage />;
+  }
 
   const styles: StyleSheet = {
     main: {

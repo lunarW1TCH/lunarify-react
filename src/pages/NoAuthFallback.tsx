@@ -1,27 +1,36 @@
-import { redirect } from 'react-router-dom';
 import { getAccessToken, redirectToAuthCodeFlow } from '../helpers/auth';
 import { getCookie, setCookie } from '../helpers/helpers';
 
+let tokenFetched = false;
+
 const NoAuthFallbackPage = () => {
   console.log(document.cookie);
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
   const token = getCookie('authToken');
   const refreshToken = getCookie('refreshToken');
   console.log(token);
 
-  const loginHandler = async () => {
-    await redirectToAuthCodeFlow();
-    const params = new URLSearchParams(window.location.search);
-    const code = params.get('code');
+  const getToken = async () => {
     if (!code) return;
     const { access_token, refresh_token } = await getAccessToken(code);
+    if (access_token) {
+      setCookie('authToken', access_token, 0.04);
+      tokenFetched = true;
+    }
 
-    setCookie('authToken', access_token, 0.04);
-    setCookie('refreshToken', refresh_token, 100);
-    redirect('/stats');
+    if (refresh_token) {
+      setCookie('refreshToken', refresh_token, 100);
+    }
+    window.location.reload();
   };
 
-  if (token) {
-    redirect('/stats');
+  const loginHandler = async () => {
+    await redirectToAuthCodeFlow();
+  };
+
+  if (code && !tokenFetched) {
+    getToken();
   }
 
   return (
