@@ -5,7 +5,7 @@ import StyleSheet from '../interfaces/StyleSheet';
 import { StoreInterface } from '../store/store';
 
 const MainNavigation = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const theme = useSelector((state: StoreInterface) => state.ui.theme);
 
   const styles: StyleSheet = {
@@ -33,7 +33,7 @@ const MainNavigation = () => {
     },
     navLink: {
       textDecoration: 'none',
-      fontSize: 24,
+      fontSize: 18,
       color: 'black',
       flex: 1,
     },

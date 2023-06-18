@@ -10,6 +10,7 @@ import { StoreInterface } from '../../store/store';
 
 import StatsTimeRange from '../../components/stats/StatsTimeRange';
 import StyleSheet from '../../interfaces/StyleSheet';
+import Spinner from '../../components/UI/Spinner';
 
 const TopSongs = () => {
   const theme = useSelector((state: StoreInterface) => state.ui.theme);
@@ -46,7 +47,7 @@ const TopSongs = () => {
     };
 
     getSongs();
-  }, [dispatch, token, range]);
+  }, [dispatch, token, range, songs.long, songs.medium, songs.short]);
 
   const showHideHandler = () => {
     setHidden(prevState => !prevState);
@@ -113,18 +114,21 @@ const TopSongs = () => {
             songs.medium.items.map((song, index) => (
               <TrackItem index={index} key={song.id} data={song} />
             ))}
+          {range === 'medium_term' && !songs.medium && <Spinner />}
           {range === 'long_term' &&
             songs.long &&
             songs.long.items &&
             songs.long.items.map((song, index) => (
               <TrackItem index={index} key={song.id} data={song} />
             ))}
+          {range === 'long_term' && !songs.long && <Spinner />}
           {range === 'short_term' &&
             songs.short &&
             songs.short.items &&
             songs.short.items.map((song, index) => (
               <TrackItem index={index} key={song.id} data={song} />
             ))}
+          {range === 'short_term' && !songs.short && <Spinner />}
         </div>
       )}
     </div>

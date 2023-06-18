@@ -6,7 +6,7 @@ import StyleSheet from '../interfaces/StyleSheet';
 import { StoreInterface } from '../store/store';
 
 const Footer = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const theme = useSelector((state: StoreInterface) => state.ui.theme);
 
   const styles: StyleSheet = {
@@ -43,7 +43,7 @@ const Footer = () => {
   useEffect(() => {
     document.documentElement.lang = i18n.language;
     setLang(i18n.language);
-  }, []);
+  }, [i18n]);
 
   return (
     <footer style={styles.footer}>

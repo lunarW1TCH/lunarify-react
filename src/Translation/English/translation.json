@@ -35,5 +35,10 @@
     "message": "Something went wrong!",
     "header404": "Not found!",
     "message404": "Could not find resource or page."
+  },
+  "fallback": {
+    "header": "Lunarify - Spotify wrapped all year round!",
+    "paragraph": "To use this website you need to log in using your Spotify account. Without it we cannot show you any statistics tied to your profile.",
+    "button": "Log in with Spotify!"
   }
 }

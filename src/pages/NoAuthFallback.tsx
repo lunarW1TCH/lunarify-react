@@ -1,15 +1,18 @@
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import Footer from '../components/Footer';
 import { getAccessToken, redirectToAuthCodeFlow } from '../helpers/auth';
-import { getCookie, setCookie } from '../helpers/helpers';
+import { setCookie } from '../helpers/helpers';
+import StyleSheet from '../interfaces/StyleSheet';
+import { StoreInterface } from '../store/store';
 
 let tokenFetched = false;
 
 const NoAuthFallbackPage = () => {
-  console.log(document.cookie);
+  const { t } = useTranslation();
+  const theme = useSelector((state: StoreInterface) => state.ui.theme);
   const params = new URLSearchParams(window.location.search);
   const code = params.get('code');
-  const token = getCookie('authToken');
-  const refreshToken = getCookie('refreshToken');
-  console.log(token);
 
   const getToken = async () => {
     if (!code) return;
@@ -33,13 +36,44 @@ const NoAuthFallbackPage = () => {
     getToken();
   }
 
+  const styles: StyleSheet = {
+    fallbackContainer: {
+      marginTop: 32,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    button: {
+      marginTop: 16,
+      padding: 12,
+      borderRadius: 24,
+      borderColor: theme.primary500,
+      backgroundColor: theme.primary300,
+      cursor: 'pointer',
+      fontSize: 16,
+    },
+    header: {
+      borderRadius: 16,
+      marginTop: 50,
+      padding: 16,
+      border: `2px solid`,
+      alignItems: 'center',
+      borderColor: theme.primary500,
+      backgroundColor: theme.primary300,
+      justifyContent: 'center',
+    },
+  };
+
   return (
-    <>
-      <h1>Polska</h1>
-      <button type="button" onClick={loginHandler}>
-        Log in with Spotify!
+    <div style={styles.fallbackContainer}>
+      <h1 style={styles.header}>{t('fallback.header')}</h1>
+      <p>{t('fallback.paragraph')}</p>
+      <button style={styles.button} type="button" onClick={loginHandler}>
+        {t('fallback.button')}
       </button>
-    </>
+      <Footer />
+    </div>
   );
 };
 

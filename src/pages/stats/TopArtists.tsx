@@ -10,6 +10,7 @@ import { StoreInterface } from '../../store/store';
 
 import StatsTimeRange from '../../components/stats/StatsTimeRange';
 import StyleSheet from '../../interfaces/StyleSheet';
+import Spinner from '../../components/UI/Spinner';
 
 const TopArtists = () => {
   const theme = useSelector((state: StoreInterface) => state.ui.theme);
@@ -24,6 +25,9 @@ const TopArtists = () => {
   useEffect(() => {
     const getArtists = async () => {
       if (!token) return;
+      if (range === 'short_term' && artists.short) return;
+      if (range === 'medium_term' && artists.medium) return;
+      if (range === 'long_term' && artists.long) return;
       const response = await fetchArtists(token, range);
 
       switch (range) {
@@ -42,7 +46,7 @@ const TopArtists = () => {
     };
 
     getArtists();
-  }, [dispatch, token, range]);
+  }, [dispatch, token, range, artists.short, artists.medium, artists.long]);
 
   const showHideHandler = () => {
     setHidden(prevState => !prevState);
@@ -109,18 +113,22 @@ const TopArtists = () => {
             artists.medium.items.map((artist, index) => (
               <ArtistItem index={index} key={artist.id} data={artist} />
             ))}
+
+          {range === 'medium_term' && !artists.medium && <Spinner />}
           {range === 'long_term' &&
             artists.long &&
             artists.long.items &&
             artists.long.items.map((artist, index) => (
               <ArtistItem index={index} key={artist.id} data={artist} />
             ))}
+          {range === 'long_term' && !artists.long && <Spinner />}
           {range === 'short_term' &&
             artists.short &&
             artists.short.items &&
             artists.short.items.map((artist, index) => (
               <ArtistItem index={index} key={artist.id} data={artist} />
             ))}
+          {range === 'short_term' && !artists.short && <Spinner />}
         </div>
       )}
     </div>
