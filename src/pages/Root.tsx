@@ -20,7 +20,7 @@ const RootLayout = () => {
     if (cookieTheme) {
       dispatch(uiActions.setTheme(cookieTheme));
     }
-  }, []);
+  }, [dispatch]);
 
   const token = getCookie('authToken');
   const refreshToken = getCookie('refreshToken');
