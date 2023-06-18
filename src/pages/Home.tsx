@@ -10,6 +10,7 @@ const HomePage = () => {
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      margin: 16,
     },
   };
 

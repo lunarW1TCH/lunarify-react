@@ -39,6 +39,8 @@ const NoAuthFallbackPage = () => {
   const styles: StyleSheet = {
     fallbackContainer: {
       marginTop: 32,
+      marginLeft: 16,
+      marginRight: 16,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',

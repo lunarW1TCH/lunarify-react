@@ -1,12 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { useWindowDimensions } from '../helpers/helpers';
 import StyleSheet from '../interfaces/StyleSheet';
 import { StoreInterface } from '../store/store';
 
 const MainNavigation = () => {
   const { t } = useTranslation();
   const theme = useSelector((state: StoreInterface) => state.ui.theme);
+  const screenSize = useWindowDimensions();
 
   const styles: StyleSheet = {
     mainNavHeader: {
@@ -33,7 +35,7 @@ const MainNavigation = () => {
     },
     navLink: {
       textDecoration: 'none',
-      fontSize: 18,
+      fontSize: screenSize.width > 800 ? 18 : 14,
       color: 'black',
       flex: 1,
     },
