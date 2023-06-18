@@ -29,5 +29,11 @@
     "Light Pink": "Jasny Różowy",
     "Light Yellow": "Jasny Żółty",
     "Light Mint": "Jasny Miętowy"
+  },
+  "error": {
+    "header": "Wystąpił błąd!",
+    "message": "Coś poszło nie tak!",
+    "header404": "Nie znaleziono!",
+    "message404": "Nie udało się znaleźć zasobu bądź strony."
   }
 }

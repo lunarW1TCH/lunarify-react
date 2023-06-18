@@ -47,8 +47,7 @@ const Footer = () => {
 
   return (
     <footer style={styles.footer}>
-      &copy;2023 Adrian Żegnałek, UICONS BY{' '}
-      <a href="https://www.flaticon.com/">FLATICON</a>
+      &copy;2023 Adrian Żegnałek
       <select
         title="lang"
         style={styles.language}

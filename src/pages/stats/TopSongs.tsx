@@ -24,6 +24,10 @@ const TopSongs = () => {
   useEffect(() => {
     const getSongs = async () => {
       if (!token) return;
+      if (range === 'short_term' && songs.short) return;
+      if (range === 'medium_term' && songs.medium) return;
+      if (range === 'long_term' && songs.long) return;
+
       const response = await fetchSongs(token, range);
 
       switch (range) {
@@ -95,7 +99,9 @@ const TopSongs = () => {
           role="button"
           tabIndex={0}
         >
-          <i style={styles.showHideIcon}>{hidden ? 'show' : 'hide'}</i>
+          <i style={styles.showHideIcon}>
+            {hidden ? t('stats.show') : t('stats.hide')}
+          </i>
         </span>
       </div>
       <StatsTimeRange range={range} setRange={setRange} />

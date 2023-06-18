@@ -29,5 +29,11 @@
     "Light Pink": "Light Pink",
     "Light Yellow": "Light Yellow",
     "Light Mint": "Light Mint"
+  },
+  "error": {
+    "header": "An error occured!",
+    "message": "Something went wrong!",
+    "header404": "Not found!",
+    "message404": "Could not find resource or page."
   }
 }
