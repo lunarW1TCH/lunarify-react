@@ -1,14 +1,14 @@
 // theme,
 // SpotifyApi.UsersTopArtistsResponse
 import { createSlice } from '@reduxjs/toolkit';
-import { LightMintTheme, Theme, Themes } from './themes';
+import { LIGHT_MINT_THEME, Theme, THEMES } from '../helpers/themes';
 
 export interface UISlice {
   theme: Theme;
 }
 
 const initialState: UISlice = {
-  theme: LightMintTheme,
+  theme: LIGHT_MINT_THEME,
 };
 
 const uiSlice = createSlice({
@@ -16,7 +16,7 @@ const uiSlice = createSlice({
   initialState,
   reducers: {
     setTheme(state, action) {
-      const chosenTheme = Themes.find(theme => theme.name === action.payload);
+      const chosenTheme = THEMES.find(theme => theme.name === action.payload);
 
       if (chosenTheme) {
         state.theme = chosenTheme;

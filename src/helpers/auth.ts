@@ -1,5 +1,5 @@
-export const clientId = 'ad5be8cba1ee417e903709892157e5e5';
-const redirectUri = 'https://lunarify.netlify.app/stats';
+export const CLIENT_ID = 'ad5be8cba1ee417e903709892157e5e5';
+const REDIRECT_URI = 'https://lunarify.netlify.app/stats';
 
 function generateCodeVerifier(length: number) {
   let text = '';
@@ -30,14 +30,14 @@ export async function getAccessToken(
   const verifier = localStorage.getItem('verifier');
 
   const params = new URLSearchParams();
-  params.append('client_id', clientId);
+  params.append('client_id', CLIENT_ID);
   params.append('grant_type', 'authorization_code');
   params.append('code', code);
   params.append(
     'scope',
     'user-read-private user-read-email user-top-read playlist-modify-private user-library-read user-read-recently-played user-read-currently-playing'
   );
-  params.append('redirect_uri', redirectUri);
+  params.append('redirect_uri', REDIRECT_URI);
   params.append('code_verifier', verifier!);
 
   const result = await fetch('https://accounts.spotify.com/api/token', {
@@ -59,14 +59,14 @@ export async function getRefreshToken(
   const verifier = localStorage.getItem('verifier');
 
   const params = new URLSearchParams();
-  params.append('client_id', clientId);
+  params.append('client_id', CLIENT_ID);
   params.append('grant_type', 'refresh_token');
   params.append('refresh_token', refreshToken);
   params.append(
     'scope',
     'user-read-private user-read-email user-top-read playlist-modify-private user-library-read user-read-recently-played user-read-currently-playing'
   );
-  params.append('redirect_uri', redirectUri);
+  params.append('redirect_uri', REDIRECT_URI);
   params.append('code_verifier', verifier!);
 
   const result = await fetch('https://accounts.spotify.com/api/token', {
@@ -89,9 +89,9 @@ export async function redirectToAuthCodeFlow() {
   localStorage.setItem('verifier', verifier);
 
   const params = new URLSearchParams();
-  params.append('client_id', clientId);
+  params.append('client_id', CLIENT_ID);
   params.append('response_type', 'code');
-  params.append('redirect_uri', redirectUri);
+  params.append('redirect_uri', REDIRECT_URI);
   params.append(
     'scope',
     'user-read-private user-read-email user-top-read playlist-modify-private user-library-read user-read-recently-played user-read-currently-playing'

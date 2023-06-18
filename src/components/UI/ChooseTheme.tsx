@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
 import { setCookie, useWindowDimensions } from '../../helpers/helpers';
-import { Themes } from '../../store/themes';
+import { THEMES } from '../../helpers/themes';
 import { uiActions } from '../../store/ui-slice';
 import StyleSheet from '../../interfaces/StyleSheet';
 
@@ -69,7 +69,7 @@ const ChooseTheme = () => {
     <>
       <h2>{t('themes.chooseTheme')}</h2>
       <div style={styles.themesContainer}>
-        {Themes.map(theme => (
+        {THEMES.map(theme => (
           <div
             key={theme.name}
             style={{

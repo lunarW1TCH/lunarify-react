@@ -13,7 +13,7 @@ export interface Theme {
   primary900: string;
 }
 
-export const LightMintTheme: Theme = {
+export const LIGHT_MINT_THEME: Theme = {
   name: 'Light Mint',
   backgroundColor: '#ffffff',
   mainTextColor: '#000000',
@@ -28,7 +28,7 @@ export const LightMintTheme: Theme = {
   primary900: '#22302a',
 };
 
-export const DarkMintTheme: Theme = {
+export const DARK_MINT_THEME: Theme = {
   name: 'Dark Mint',
   backgroundColor: '#000000',
   mainTextColor: '#ffffff',
@@ -43,7 +43,7 @@ export const DarkMintTheme: Theme = {
   primary900: '#22302a',
 };
 
-export const LightPinkTheme: Theme = {
+export const LIGHT_PINK_THEME: Theme = {
   name: 'Light Pink',
   backgroundColor: '#ffffff',
   mainTextColor: '#000000',
@@ -58,7 +58,7 @@ export const LightPinkTheme: Theme = {
   primary900: '#4a3c42',
 };
 
-export const DarkPinkTheme: Theme = {
+export const DARK_PINK_THEME: Theme = {
   name: 'Dark Pink',
   backgroundColor: '#000000',
   mainTextColor: '#ffffff',
@@ -73,7 +73,7 @@ export const DarkPinkTheme: Theme = {
   primary900: '#4a3c42',
 };
 
-export const LightLavenderTheme: Theme = {
+export const LIGHT_LAVENDER_THEME: Theme = {
   name: 'Light Lavender',
   backgroundColor: '#ffffff',
   mainTextColor: '#000000',
@@ -88,7 +88,7 @@ export const LightLavenderTheme: Theme = {
   primary900: '#403649',
 };
 
-export const DarkLavenderTheme: Theme = {
+export const DARK_LAVENDER_THEME: Theme = {
   name: 'Dark Lavender',
   backgroundColor: '#000000',
   mainTextColor: '#ffffff',
@@ -103,7 +103,7 @@ export const DarkLavenderTheme: Theme = {
   primary900: '#403649',
 };
 
-export const LightBlueTheme: Theme = {
+export const LIGHT_BLUE_THEME: Theme = {
   name: 'Light Blue',
   backgroundColor: '#ffffff',
   mainTextColor: '#000000',
@@ -118,7 +118,7 @@ export const LightBlueTheme: Theme = {
   primary900: '#343b3e',
 };
 
-export const DarkBlueTheme: Theme = {
+export const DARK_BLUE_THEME: Theme = {
   name: 'Dark Blue',
   backgroundColor: '#000000',
   mainTextColor: '#ffffff',
@@ -133,7 +133,7 @@ export const DarkBlueTheme: Theme = {
   primary900: '#343b3e',
 };
 
-export const LightYellowTheme: Theme = {
+export const LIGHT_YELLOW_THEME: Theme = {
   name: 'Light Yellow',
   backgroundColor: '#ffffff',
   mainTextColor: '#000000',
@@ -148,7 +148,7 @@ export const LightYellowTheme: Theme = {
   primary900: '#4c4c2d',
 };
 
-export const DarkYellowTheme: Theme = {
+export const DARK_YELLOW_THEME: Theme = {
   name: 'Dark Yellow',
   backgroundColor: '#000000',
   mainTextColor: '#ffffff',
@@ -163,15 +163,15 @@ export const DarkYellowTheme: Theme = {
   primary900: '#4c4c2d',
 };
 
-export const Themes = [
-  LightMintTheme,
-  DarkMintTheme,
-  LightPinkTheme,
-  DarkPinkTheme,
-  LightLavenderTheme,
-  DarkLavenderTheme,
-  LightBlueTheme,
-  DarkBlueTheme,
-  LightYellowTheme,
-  DarkYellowTheme,
+export const THEMES = [
+  LIGHT_MINT_THEME,
+  DARK_MINT_THEME,
+  LIGHT_PINK_THEME,
+  DARK_PINK_THEME,
+  LIGHT_LAVENDER_THEME,
+  DARK_LAVENDER_THEME,
+  LIGHT_BLUE_THEME,
+  DARK_BLUE_THEME,
+  LIGHT_YELLOW_THEME,
+  DARK_YELLOW_THEME,
 ];
