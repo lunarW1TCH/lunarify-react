@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "/stats"
+  status = 200
