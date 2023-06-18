@@ -1,5 +1,5 @@
 export const clientId = 'ad5be8cba1ee417e903709892157e5e5';
-const redirectUri = 'http://localhost:3000/stats';
+const redirectUri = 'https://lunarify.netlify.app/stats';
 
 function generateCodeVerifier(length: number) {
   let text = '';
