@@ -1,5 +1,5 @@
-export const CLIENT_ID = 'ad5be8cba1ee417e903709892157e5e5';
-const REDIRECT_URI = 'https://lunarify.netlify.app/stats';
+export const CLIENT_ID = 'YOUR_CLIENT_ID';
+const REDIRECT_URI = 'YOUR_REDIRECT_URI';
 
 function generateCodeVerifier(length: number) {
   let text = '';
