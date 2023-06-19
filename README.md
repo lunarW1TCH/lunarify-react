@@ -1,12 +1,13 @@
 Hello, this is a React app which utilizes Spotify API to show user's top listened-to artists and albums.
 There's also a React Native version: https://github.com/lunarW1TCH/lunarify-react-native
 
-React
-TypeScript
-Redux Toolkit
-i18next
-Spotify API
-OAuthFlow
+Technologies used:
+ - React
+ - TypeScript
+ - Redux Toolkit
+ - i18next
+ - Spotify API
+ - OAuthFlow
 ### App is currently not publicly available to browse through since that would require me to reach out to Spotify for extended quota usage of their API which I do not want to do at the moment.
 (Feel free to look through/clone/fork the code though!)
 
